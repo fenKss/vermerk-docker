@@ -1,29 +1,29 @@
 version: "3.8"
 services:
   nginx:
-    container_name: sw-nginx
+    container_name: vm-nginx
     build: "./containers/nginx"
     ports:
       - 8080:80
     volumes:
-      - ./saltwort:/var/www/saltwort
+      - ./vermerk:/var/www/vermerk
     links:
       - php
   php:
-    container_name: sw-php
+    container_name: vm-php
     build: "./containers/php"
     volumes:
-      - ./saltwort:/var/www/saltwort
+      - ./vermerk:/var/www/vermerk
     links:
       - percona
   percona:
-    container_name: sw-percona
+    container_name: vm-percona
     image: percona
     environment:
-      MYSQL_USER: saltwort
-      MYSQL_PASSWORD: 1
-      MYSQL_DATABASE: saltwort
-      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_USER: vermerk
+      MYSQL_PASvmORD: 1
+      MYSQL_DATABASE: vermerk
+      MYSQL_ROOT_PASvmORD: 1
     ports:
       - 23306:3306
     ulimits:

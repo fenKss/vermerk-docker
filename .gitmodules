@@ -1,0 +1,3 @@
+[submodule "vermerk"]
+	path = vermerk
+	url = git@github.com:fenKss/vermerk.git

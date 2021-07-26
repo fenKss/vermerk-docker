@@ -78,11 +78,11 @@ RUN chown www-data /var/log/fpm-php.www.log
 RUN ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 
-RUN addgroup saltwort  && \
-    adduser --home /home/saltwort  --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password --ingroup saltwort saltwort
+RUN addgroup vermerk  && \
+    adduser --home /home/vermerk  --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password --ingroup vermerk vermerk
 
-RUN echo "#saltwort without paasword" >> /etc/sudoers
-RUN echo "saltwort ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN echo "#vermerk without paasword" >> /etc/sudoers
+RUN echo "vermerk ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 RUN apt-get install mycli zsh -y
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
