@@ -7,6 +7,7 @@ services:
       - 8080:80
     volumes:
       - ./vermerk:/var/www/vermerk
+      - ./logs/nginx:/var/log/nginx
     links:
       - php
   php:
@@ -14,6 +15,8 @@ services:
     build: "./containers/php"
     volumes:
       - ./vermerk:/var/www/vermerk
+      - ./logs/php/fpm-php.www.log:/var/log/fpm-php.www.log
+      - ./logs/php/php-fpm.log:/var/log/php-fpm.log
     links:
       - percona
   percona:

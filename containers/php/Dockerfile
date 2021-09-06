@@ -27,7 +27,6 @@ RUN apt-get install -y \
             libpq5 \
             libz-dev \
             libyaml-0-2 \
-            python-lxml \
             libxslt1-dev \
             libyaml-dev
 
